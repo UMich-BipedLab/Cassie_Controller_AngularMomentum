@@ -1,0 +1,1 @@
+figure;plot(dqxyz);hold on; plot(Data_perfect.dq1); plot(Data_perfect.dq2); plot(Data_perfect.dq3);plot(Data.stanceLeg,'g-.')
