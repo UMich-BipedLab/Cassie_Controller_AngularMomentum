@@ -11,3 +11,5 @@ This repository is the implementation of the controller described in [One-Step A
 5. The base of the robot is located at IMU instead of the default torso origin set by Agility Robotics (AR). All kinematics and dynamics functions use this convention and so is Ideal_Simulator. But FG_Simulator still use AR's convention.
 6. Please install Microsoft Visual 2015 and make it the default compiler for MATLAB. Otherwise all MATLAB System blocks need to be run in interpretation mode instead of code generation mode. 
 7. Run startup.m before running simulink models to add all folders to path and create a Build folder for compiled files.
+Other notes:
+1. There is no standing controller.
