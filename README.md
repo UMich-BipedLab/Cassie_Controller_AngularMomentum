@@ -14,3 +14,4 @@ This repository is the implementation of the controller described in [One-Step A
 
 Other notes:
 1. There is no standing controller.
+2. To test the controller in experiment, please start with the robot hung in the air, with torso 1 ~ 1.2m above the ground and two feet touching the ground right beneath the torso, 30 cm apart from each other. Slightly higher initial torso position is fine but a too low initial torso position would cause the legs jerk when motor power is turned on. Before turning on the STO button (SA button on the remote), on the remote please set the S1 to 0, S2 button to 0, LS button to 1, RS button to 0, SB to -1, SC to -1, SD to -1, SG to -1. 
