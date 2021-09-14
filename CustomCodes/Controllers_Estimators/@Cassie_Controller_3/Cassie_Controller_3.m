@@ -418,8 +418,10 @@ classdef Cassie_Controller_3 <matlab.System & matlab.system.mixin.Propagates & m
                         
                         obj.rp_stToe_z_ini = rp_LToe_rigid(3);
                         
-                        obj.H_next = min([H, H + (p_LToe(3) - p_RToe(3))]);
-                        obj.H_this = min([H, H - (p_LToe(3) - p_RToe(3))]);
+%                         obj.H_next = min([H, H + (p_LToe(3) - p_RToe(3))]);
+%                         obj.H_this = min([H, H - (p_LToe(3) - p_RToe(3))]);
+                        obj.H_next = H;
+                        obj.H_this = H;
                     else
                         obj.rp_swToe_ini = rp_LToe_rigid; % notice: this value could be overwrite in later code
                         obj.rv_swToe_ini = rv_LToe_rigid;
@@ -432,9 +434,10 @@ classdef Cassie_Controller_3 <matlab.System & matlab.system.mixin.Propagates & m
                         
                         obj.rp_stToe_z_ini = rp_RToe_rigid(3);
                         
-                        obj.H_next = min([H, H + (p_RToe(3) - p_LToe(3))]);
-                        obj.H_this = min([H, H - (p_RToe(3) - p_LToe(3))]);
-                        
+%                         obj.H_next = min([H, H + (p_RToe(3) - p_LToe(3))]);
+%                         obj.H_this = min([H, H - (p_RToe(3) - p_LToe(3))]);
+                        obj.H_next = H;
+                        obj.H_this = H;
                     end
                 end
                 
@@ -1100,7 +1103,7 @@ classdef Cassie_Controller_3 <matlab.System & matlab.system.mixin.Propagates & m
                 f_thd = median([f_thd,0,1]);
                 if obj.swing_leg_leave_ground == 0
                     obj.rp_swToe_ini(1:2) = rp_swToe_rigid(1:2);
-                    obj.s_ini = s; % s_ini will be the s when swing leg begin to swing.
+                    obj.s_ini = min([s, 0.6]); % s_ini will be the s when swing leg begin to swing.
                     u(sw_motor_thigh) = f_thd * u(sw_motor_thigh);
                     u(sw_motor_abduction) = f_thd * u(sw_motor_abduction);
                 end
