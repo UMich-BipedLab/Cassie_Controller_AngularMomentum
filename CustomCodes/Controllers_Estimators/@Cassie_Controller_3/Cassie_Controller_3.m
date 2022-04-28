@@ -653,11 +653,11 @@ classdef Cassie_Controller_3 <matlab.System & matlab.system.mixin.Propagates & m
                 
 %                 x0_next_tgd_goal = (dxf_next_tgd_goal - dxf_this_tgd*cosh(l*IRC.step_time))/(l*sinh(l*IRC.step_time));
 %                 y0_next_tgd_goal = (dyf_next_tgd_goal - dyf_this_tgd*cosh(l*IRC.step_time))/(l*sinh(l*IRC.step_time));
-%                 x0_next_tgd_goal = (dxf_next_tgd_goal - (dxf_this_tgd + v_com(3)* xf_this_tgd/rp_stToe(3))*cosh(l*IRC.step_time))/(l*sinh(l*IRC.step_time) - v_com(3)/rp_stToe(3)*cos(l*IRC.step_time));
-%                 y0_next_tgd_goal = (dyf_next_tgd_goal - (dyf_this_tgd + v_com(3)* yf_this_tgd/rp_stToe(3))*cosh(l*IRC.step_time))/(l*sinh(l*IRC.step_time) - v_com(3)/rp_stToe(3)*cos(l*IRC.step_time)); 
+%                 x0_next_tgd_goal = (dxf_next_tgd_goal - (dxf_this_tgd + v_com(3)* xf_this_tgd/rp_stToe(3))*cosh(l*IRC.step_time))/(l*sinh(l*IRC.step_time) - v_com(3)/rp_stToe(3)*cosh(l*IRC.step_time));
+%                 y0_next_tgd_goal = (dyf_next_tgd_goal - (dyf_this_tgd + v_com(3)* yf_this_tgd/rp_stToe(3))*cosh(l*IRC.step_time))/(l*sinh(l*IRC.step_time) - v_com(3)/rp_stToe(3)*cosh(l*IRC.step_time)); 
 
-                x0_next_tgd_goal = (dxf_next_tgd_goal - (dxf_this_tgd + v_com(3)* xf_this_tgd/obj.H_next)*cosh(l*IRC.step_time))/(l*sinh(l*IRC.step_time) - v_com(3)/obj.H_next*cos(l*IRC.step_time));
-                y0_next_tgd_goal = (dyf_next_tgd_goal - (dyf_this_tgd + v_com(3)* yf_this_tgd/obj.H_next)*cosh(l*IRC.step_time))/(l*sinh(l*IRC.step_time) - v_com(3)/obj.H_next*cos(l*IRC.step_time));
+                x0_next_tgd_goal = (dxf_next_tgd_goal - (dxf_this_tgd + v_com(3)* xf_this_tgd/obj.H_next)*cosh(l*IRC.step_time))/(l*sinh(l*IRC.step_time) - v_com(3)/obj.H_next*cosh(l*IRC.step_time));
+                y0_next_tgd_goal = (dyf_next_tgd_goal - (dyf_this_tgd + v_com(3)* yf_this_tgd/obj.H_next)*cosh(l*IRC.step_time))/(l*sinh(l*IRC.step_time) - v_com(3)/obj.H_next*cosh(l*IRC.step_time));
 
                 if direct_up_down
                     x0_next_tgd_goal = 0;
